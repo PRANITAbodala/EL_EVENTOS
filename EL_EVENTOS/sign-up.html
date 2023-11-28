@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    
+
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login-signin.css">
+ <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;
+        var phone=document.myform.phone.value;
+        var confirm=document.myform.confirm.value;
+        var email=document.myform.email.value;  
+          
+        if (name==null || name==""){  
+          alert("Name can't be blank");  
+          return false;  
+        }
+
+
+        if(phone =="null" || phone=="") {
+        alert('Phone no. is required');
+        return false;
+        } 
+        if (phone.length > 10 || phone.length < 10) {
+        alert( 'Phone no. must be 10 digits.');
+        return false;
+        } 
+        if(emailid == '') {
+        alert('Email is required');
+        return false;
+        } 
+        if (!isValidEmail(email)) {
+        alert('Provide a valid email address');
+        }
+
+        if(password.length<=4){  
+          alert("Password must be at least 4 characters long.");  
+          return false;  
+        }  
+        
+        if(password == '') {
+        alert( 'Password is required');
+        return false;
+        } 
+
+        if(confirm == '') {
+        alert( 'Please confirm your password');
+        return false;
+        } 
+        if (password != confirm) {
+        alert( "Passwords doesn't match");
+        return false;
+        } 
+        }  
+</script>  
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-holder">
+            <h2>Create New account</h2>
+            <form action="signup.php" class="form" method="post" id="form" name="myform" onsubmit="return validateform()">
+                <div class="form-group">
+                    <img src="user.png" alt="">
+                    <input type="text" placeholder="User name" name="name"  id="username" required>
+                </div>
+                <div class="form-group">
+                    <img src="user.png" alt="">
+                    <input type="text" placeholder="phone" name="phone"  id="phone" required>
+                </div>
+                <div class="form-group">
+                    <img src="email.png" alt="">
+                    <input type="email" placeholder="Email" name="emailid" id="email" required>
+                </div>
+                <div class="form-group">
+                    <img src="lock.png" alt="">
+                    <input type="password" placeholder="Password"  name="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <img src="lock.png" alt="">
+                    <input type="password" placeholder="Confirm Password" name="confirm"  id="password2" required>
+                </div>
+                <div class="form-group">
+                   <!-- <button type="submit">Sign Up</button> -->
+  
+                   <input type="submit" value="SIGN UP" name="submit" id="submit">
+                </div>
+                <div class="form-group">
+                    <a href="index1.html" class="right-link">Sign in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
